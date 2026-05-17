@@ -1,0 +1,565 @@
+{
+  "version": 1,
+  "corpora": [
+    {
+      "id": "g6-001",
+      "title": "장군의 결심",
+      "grade": 6,
+      "level": "mid",
+      "charCount": 322,
+      "estimatedReadingMs": 180000,
+      "pages": [
+        {
+          "text": "오랜 [B1]을 치른 장군은 마침내 평화로운 마을로 돌아왔어요. 마을 사람들은 큰 잔치를 열어 그를 맞이했답니다. 장군은 미소를 지으며 말했어요. \"이제 칼을 내려놓고, 백성과 함께 살겠노라.\"",
+          "blanks": [
+            {
+              "id": "B1",
+              "answer": { "word": "전쟁", "hanja": "戰爭" },
+              "etymology": [
+                { "char": "戰", "sound": "전", "meaning": "싸움" },
+                { "char": "爭", "sound": "쟁", "meaning": "다툴" }
+              ],
+              "morphemeHints": ["戰", "爭", "勝", "敗", "強", "兵"],
+              "contextClues": ["장군", "칼", "오랜", "평화로운"]
+            }
+          ]
+        },
+        {
+          "text": "다음 날부터 장군은 농기구를 들고 [B2]에 나섰어요. 단단한 손으로 직접 씨앗을 뿌리고, 비가 오면 같이 비를 맞으며 일했지요. 마을 사람들은 장군의 새 모습을 보며 마음 깊이 감동했어요.",
+          "blanks": [
+            {
+              "id": "B2",
+              "answer": { "word": "농사", "hanja": "農事" },
+              "etymology": [
+                { "char": "農", "sound": "농", "meaning": "농사" },
+                { "char": "事", "sound": "사", "meaning": "일" }
+              ],
+              "morphemeHints": ["農", "事", "工", "夫", "田", "作"],
+              "contextClues": ["농기구", "씨앗", "비", "마을 사람들"]
+            }
+          ]
+        }
+      ],
+      "boss": null
+    },
+    {
+      "id": "g6-002",
+      "title": "발명가의 하루",
+      "grade": 6,
+      "level": "mid",
+      "charCount": 348,
+      "estimatedReadingMs": 200000,
+      "pages": [
+        {
+          "text": "어린 [B1]는 매일 아침 작업실에 들어가 새로운 것을 만들었어요. 어제 망가뜨린 부품들도 오늘은 새로운 발명품의 재료가 되었지요. 그의 손에는 늘 망치와 작은 부품이 들려 있었답니다.",
+          "blanks": [
+            {
+              "id": "B1",
+              "answer": { "word": "공작", "hanja": "工作" },
+              "etymology": [
+                { "char": "工", "sound": "공", "meaning": "장인" },
+                { "char": "作", "sound": "작", "meaning": "지을" }
+              ],
+              "morphemeHints": ["工", "作", "事", "成", "用", "始"],
+              "contextClues": ["작업실", "발명품", "부품", "만들"]
+            }
+          ]
+        },
+        {
+          "text": "어느 날 그는 친구들에게 자기 발명품을 [B2]했어요. 빛이 들어오면 자동으로 켜지는 작은 등불이었지요. 친구들은 박수를 치며 그의 끈기와 노력을 칭찬했어요.",
+          "blanks": [
+            {
+              "id": "B2",
+              "answer": { "word": "발표", "hanja": "發表" },
+              "etymology": [
+                { "char": "發", "sound": "발", "meaning": "필" },
+                { "char": "表", "sound": "표", "meaning": "겉" }
+              ],
+              "morphemeHints": ["發", "表", "話", "語", "明", "示"],
+              "contextClues": ["친구들에게", "박수", "칭찬", "자기 발명품"]
+            }
+          ]
+        }
+      ],
+      "boss": null
+    },
+    {
+      "id": "g6-003",
+      "title": "물고기의 회의",
+      "grade": 6,
+      "level": "mid",
+      "charCount": 304,
+      "estimatedReadingMs": 175000,
+      "pages": [
+        {
+          "text": "맑은 강 속에 사는 물고기들은 큰 [B1]를 열었어요. \"요즘 물이 흐려졌어. 어떻게 하면 좋을까?\" 가장 나이 많은 잉어가 진지하게 물었답니다.",
+          "blanks": [
+            {
+              "id": "B1",
+              "answer": { "word": "회의", "hanja": "會議" },
+              "etymology": [
+                { "char": "會", "sound": "회", "meaning": "모일" },
+                { "char": "議", "sound": "의", "meaning": "의논할" }
+              ],
+              "morphemeHints": ["會", "議", "話", "問", "答", "言"],
+              "contextClues": ["진지하게 물었", "어떻게 하면 좋을까", "모여"]
+            }
+          ]
+        },
+        {
+          "text": "여러 의견이 오갔지만, 작은 송사리의 [B2]이 가장 빛났어요. \"우리가 매일 조금씩 모래를 옮겨 흐름을 바꿔보면 어떨까요?\" 모두가 송사리를 새로 보게 되었답니다.",
+          "blanks": [
+            {
+              "id": "B2",
+              "answer": { "word": "지혜", "hanja": "知慧" },
+              "etymology": [
+                { "char": "知", "sound": "지", "meaning": "알" },
+                { "char": "慧", "sound": "혜", "meaning": "슬기" }
+              ],
+              "morphemeHints": ["知", "慧", "智", "明", "心", "意"],
+              "contextClues": ["빛났어요", "새로 보게 되었", "어떨까요"]
+            }
+          ]
+        }
+      ],
+      "boss": null
+    },
+    {
+      "id": "g6-004",
+      "title": "바람과 해의 내기",
+      "grade": 6,
+      "level": "mid",
+      "charCount": 286,
+      "estimatedReadingMs": 170000,
+      "pages": [
+        {
+          "text": "바람과 해는 누가 더 [B1]가 센지 내기를 했어요. 마침 길을 가는 사람이 외투를 입고 있었지요. \"저 사람의 외투를 먼저 벗기는 쪽이 이기는 것이다!\"",
+          "blanks": [
+            {
+              "id": "B1",
+              "answer": { "word": "능력", "hanja": "能力" },
+              "etymology": [
+                { "char": "能", "sound": "능", "meaning": "능할" },
+                { "char": "力", "sound": "력", "meaning": "힘" }
+              ],
+              "morphemeHints": ["能", "力", "強", "弱", "勝", "氣"],
+              "contextClues": ["누가 더", "센지", "내기", "이기는 것"]
+            }
+          ]
+        },
+        {
+          "text": "바람이 거세게 불자 사람은 외투를 더 꼭 쥐었지만, 해가 따뜻하게 [B2]을 비추자 사람은 더워서 스스로 외투를 벗었어요. 부드러운 힘이 강한 바람보다 낫다는 걸 모두가 알게 되었답니다.",
+          "blanks": [
+            {
+              "id": "B2",
+              "answer": { "word": "광선", "hanja": "光線" },
+              "etymology": [
+                { "char": "光", "sound": "광", "meaning": "빛" },
+                { "char": "線", "sound": "선", "meaning": "줄" }
+              ],
+              "morphemeHints": ["光", "線", "明", "日", "火", "色"],
+              "contextClues": ["따뜻하게", "비추자", "더워서", "해가"]
+            }
+          ]
+        }
+      ],
+      "boss": null
+    },
+    {
+      "id": "g6-005",
+      "title": "민들레의 비행",
+      "grade": 6,
+      "level": "mid",
+      "charCount": 332,
+      "estimatedReadingMs": 190000,
+      "pages": [
+        {
+          "text": "노란 민들레꽃이 흰 [B1]가 되어 바람을 기다렸어요. 처음에는 무서워 떨기도 했지만, 친구 민들레들이 응원해 주었지요. \"용기를 내! 멀리 가서 새로운 곳에 뿌리를 내리는 거야.\"",
+          "blanks": [
+            {
+              "id": "B1",
+              "answer": { "word": "종자", "hanja": "種子" },
+              "etymology": [
+                { "char": "種", "sound": "종", "meaning": "씨" },
+                { "char": "子", "sound": "자", "meaning": "아들/씨앗" }
+              ],
+              "morphemeHints": ["種", "子", "草", "花", "木", "果"],
+              "contextClues": ["흰", "바람", "뿌리를 내리는", "노란 민들레꽃"]
+            }
+          ]
+        },
+        {
+          "text": "바람이 불자 [B1]들은 하늘 높이 [B2]을 시작했어요. 어떤 친구는 마당에 내려앉고, 어떤 친구는 멀리 산 너머까지 날아갔답니다. 이듬해 봄, 새로운 곳에 노란 민들레가 활짝 피어났어요.",
+          "blanks": [
+            {
+              "id": "B2",
+              "answer": { "word": "비행", "hanja": "飛行" },
+              "etymology": [
+                { "char": "飛", "sound": "비", "meaning": "날" },
+                { "char": "行", "sound": "행", "meaning": "다닐" }
+              ],
+              "morphemeHints": ["飛", "行", "去", "來", "上", "風"],
+              "contextClues": ["하늘 높이", "날아갔답니다", "내려앉고"]
+            }
+          ]
+        }
+      ],
+      "boss": null
+    },
+
+    {
+      "id": "g6-101",
+      "title": "동문서답 — 철수와 영희",
+      "grade": 6,
+      "level": "advanced",
+      "charCount": 612,
+      "estimatedReadingMs": 330000,
+      "pages": [
+        {
+          "text": "방과 후 운동장에서 철수는 영희에게 \"오늘 점심에 뭐 먹을래?\" 하고 물었어요. 그런데 영희는 엉뚱하게 \"내일 비가 올 것 같아\"라고 답했답니다. 철수의 [B1]은 음식에 관한 것이었는데, 영희의 [B2]은 날씨 이야기였지요.",
+          "blanks": [
+            {
+              "id": "B1",
+              "answer": { "word": "질문", "hanja": "質問" },
+              "etymology": [
+                { "char": "質", "sound": "질", "meaning": "바탕" },
+                { "char": "問", "sound": "문", "meaning": "물을" }
+              ],
+              "morphemeHints": ["質", "問", "答", "話", "言", "知"],
+              "contextClues": ["뭐 먹을래", "하고 물었", "음식에 관한"]
+            },
+            {
+              "id": "B2",
+              "answer": { "word": "대답", "hanja": "對答" },
+              "etymology": [
+                { "char": "對", "sound": "대", "meaning": "마주할" },
+                { "char": "答", "sound": "답", "meaning": "대답" }
+              ],
+              "morphemeHints": ["對", "答", "問", "言", "話", "心"],
+              "contextClues": ["내일 비가", "날씨 이야기", "엉뚱하게"]
+            }
+          ]
+        },
+        {
+          "text": "친구들이 옆에서 두 사람을 보고 까르르 웃었어요. 누군가는 \"이거 완전 [B3]인데?\" 하고 농담했지요. 동쪽을 물으면 서쪽을 답하는 듯한 모습이 딱 들어맞았어요.",
+          "blanks": [
+            {
+              "id": "B3",
+              "answer": { "word": "혼란", "hanja": "混亂" },
+              "etymology": [
+                { "char": "混", "sound": "혼", "meaning": "섞일" },
+                { "char": "亂", "sound": "란", "meaning": "어지러울" }
+              ],
+              "morphemeHints": ["混", "亂", "失", "誤", "問", "答"],
+              "contextClues": ["까르르 웃었", "농담", "딱 들어맞았", "엉뚱"]
+            }
+          ]
+        },
+        {
+          "text": "사실 영희는 다른 친구의 이야기를 곰곰이 생각하느라 철수의 말을 듣지 못한 거였어요. 친구들은 영희에게 \"먼저 [B4]을 잘 해야지\" 하고 부드럽게 말해 주었어요. 영희는 고개를 끄덕이며 진지하게 다시 들었답니다.",
+          "blanks": [
+            {
+              "id": "B4",
+              "answer": { "word": "경청", "hanja": "敬聽" },
+              "etymology": [
+                { "char": "敬", "sound": "경", "meaning": "공경" },
+                { "char": "聽", "sound": "청", "meaning": "들을" }
+              ],
+              "morphemeHints": ["敬", "聽", "聞", "言", "話", "心"],
+              "contextClues": ["듣지 못한", "다시 들었", "잘 해야지"]
+            }
+          ]
+        }
+      ],
+      "boss": "동문서답"
+    },
+
+    {
+      "id": "g6-102",
+      "title": "백발백중 — 활쏘기 명수",
+      "grade": 6,
+      "level": "advanced",
+      "charCount": 588,
+      "estimatedReadingMs": 320000,
+      "pages": [
+        {
+          "text": "옛날, 활을 무척 잘 쏘는 청년이 있었어요. 그는 매일 새벽 일찍 일어나 활터로 나가 [B1]를 했지요. 비가 오나 눈이 오나 쉬지 않고 활시위를 당겼답니다.",
+          "blanks": [
+            {
+              "id": "B1",
+              "answer": { "word": "연습", "hanja": "練習" },
+              "etymology": [
+                { "char": "練", "sound": "련", "meaning": "익힐" },
+                { "char": "習", "sound": "습", "meaning": "익힐" }
+              ],
+              "morphemeHints": ["練", "習", "學", "勤", "工", "事"],
+              "contextClues": ["매일", "쉬지 않고", "활시위를 당겼"]
+            }
+          ]
+        },
+        {
+          "text": "어느 날 임금이 활쏘기 [B2]을 열었어요. 전국에서 모인 명수들이 차례로 화살을 쏘았지만, 청년만큼 정확한 사람은 없었답니다. 청년이 쏜 화살은 모두 과녁 한가운데에 박혔지요.",
+          "blanks": [
+            {
+              "id": "B2",
+              "answer": { "word": "대회", "hanja": "大會" },
+              "etymology": [
+                { "char": "大", "sound": "대", "meaning": "큰" },
+                { "char": "會", "sound": "회", "meaning": "모일" }
+              ],
+              "morphemeHints": ["大", "會", "場", "勝", "民", "事"],
+              "contextClues": ["전국에서 모인", "차례로", "임금이"]
+            }
+          ]
+        },
+        {
+          "text": "백 번을 쏘아도 백 번 모두 맞히는 그의 모습에 사람들은 [B3]했어요. 임금은 그에게 큰 상을 내리고, 궁궐의 호위 무사로 삼고 싶다고 청했답니다. 그러나 청년은 정중히 거절했어요.",
+          "blanks": [
+            {
+              "id": "B3",
+              "answer": { "word": "감탄", "hanja": "感歎" },
+              "etymology": [
+                { "char": "感", "sound": "감", "meaning": "느낄" },
+                { "char": "歎", "sound": "탄", "meaning": "감탄할" }
+              ],
+              "morphemeHints": ["感", "歎", "心", "美", "勇", "意"],
+              "contextClues": ["사람들", "큰 상을 내리", "백 번 모두 맞히"]
+            }
+          ]
+        },
+        {
+          "text": "\"저는 마을의 [B4]을 지키며 살고 싶습니다. 활은 사람을 해치는 것이 아니라 사람을 지키는 데 쓰여야 합니다.\" 청년의 곧은 마음에 임금도 감동하여 고개를 끄덕였답니다.",
+          "blanks": [
+            {
+              "id": "B4",
+              "answer": { "word": "평화", "hanja": "平和" },
+              "etymology": [
+                { "char": "平", "sound": "평", "meaning": "평평할" },
+                { "char": "和", "sound": "화", "meaning": "화할" }
+              ],
+              "morphemeHints": ["平", "和", "安", "心", "民", "正"],
+              "contextClues": ["지키며 살고", "사람을 지키는", "마을의"]
+            }
+          ]
+        }
+      ],
+      "boss": "백발백중"
+    },
+
+    {
+      "id": "g6-103",
+      "title": "천고마비 — 가을의 들판",
+      "grade": 6,
+      "level": "advanced",
+      "charCount": 624,
+      "estimatedReadingMs": 340000,
+      "pages": [
+        {
+          "text": "가을이 깊어지자 들판은 황금빛으로 물들었어요. [B1]은 어느 때보다 높고 푸르렀고, 시원한 바람이 살랑살랑 불어왔지요. 멀리서 새들이 줄지어 남쪽으로 날아가는 모습도 보였답니다.",
+          "blanks": [
+            {
+              "id": "B1",
+              "answer": { "word": "천공", "hanja": "天空" },
+              "etymology": [
+                { "char": "天", "sound": "천", "meaning": "하늘" },
+                { "char": "空", "sound": "공", "meaning": "빌" }
+              ],
+              "morphemeHints": ["天", "空", "山", "海", "風", "雪"],
+              "contextClues": ["높고 푸르렀", "새들이 줄지어", "시원한 바람"]
+            }
+          ]
+        },
+        {
+          "text": "농부는 잘 익은 벼를 [B2]하며 흐뭇한 미소를 지었어요. 한 해 동안 흘린 땀이 결실로 돌아오는 순간이었지요. 옆 밭에서 일하던 이웃도 큰 소리로 함께 웃었답니다.",
+          "blanks": [
+            {
+              "id": "B2",
+              "answer": { "word": "수확", "hanja": "收穫" },
+              "etymology": [
+                { "char": "收", "sound": "수", "meaning": "거둘" },
+                { "char": "穫", "sound": "확", "meaning": "거둘" }
+              ],
+              "morphemeHints": ["收", "穫", "農", "事", "得", "成"],
+              "contextClues": ["잘 익은 벼", "결실", "한 해 동안 흘린 땀"]
+            }
+          ]
+        },
+        {
+          "text": "마구간의 [B3]들도 한껏 살이 올라 윤기가 흘렀어요. 풀이 풍성한 가을, 마음껏 먹은 덕분이지요. 농부는 말의 옆구리를 토닥이며 \"올해도 수고했다\" 하고 다정하게 말을 건넸어요.",
+          "blanks": [
+            {
+              "id": "B3",
+              "answer": { "word": "마필", "hanja": "馬匹" },
+              "etymology": [
+                { "char": "馬", "sound": "마", "meaning": "말" },
+                { "char": "匹", "sound": "필", "meaning": "필" }
+              ],
+              "morphemeHints": ["馬", "匹", "牛", "犬", "魚", "肥"],
+              "contextClues": ["마구간", "살이 올라", "풀이 풍성한", "옆구리를 토닥"]
+            }
+          ]
+        },
+        {
+          "text": "저녁이 되자 마을에는 곡식을 빻는 소리와 아이들 웃음이 어우러져 [B4]가 가득했어요. 농부는 \"이런 풍요로운 가을이 매년 오기를\" 하고 조용히 기도했답니다.",
+          "blanks": [
+            {
+              "id": "B4",
+              "answer": { "word": "음악", "hanja": "音樂" },
+              "etymology": [
+                { "char": "音", "sound": "음", "meaning": "소리" },
+                { "char": "樂", "sound": "악", "meaning": "즐길" }
+              ],
+              "morphemeHints": ["音", "樂", "歌", "話", "風", "心"],
+              "contextClues": ["빻는 소리", "웃음이 어우러져", "마을에는"]
+            }
+          ]
+        }
+      ],
+      "boss": "천고마비"
+    },
+
+    {
+      "id": "g6-104",
+      "title": "오리무중 — 안개 속 등반",
+      "grade": 6,
+      "level": "advanced",
+      "charCount": 602,
+      "estimatedReadingMs": 325000,
+      "pages": [
+        {
+          "text": "이른 새벽, 등산객들은 산을 오르기 시작했어요. 그런데 정상에 가까워질수록 짙은 안개가 [B1]를 가렸지요. 한 발짝 앞도 잘 보이지 않아 모두가 긴장했답니다.",
+          "blanks": [
+            {
+              "id": "B1",
+              "answer": { "word": "시야", "hanja": "視野" },
+              "etymology": [
+                { "char": "視", "sound": "시", "meaning": "볼" },
+                { "char": "野", "sound": "야", "meaning": "들" }
+              ],
+              "morphemeHints": ["視", "野", "見", "目", "光", "前"],
+              "contextClues": ["한 발짝 앞도 잘 보이지", "짙은 안개", "정상"]
+            }
+          ]
+        },
+        {
+          "text": "대장은 [B2]을 잃지 않으려 차분한 목소리로 말했어요. \"모두 차례로 손을 잡고 천천히 움직입시다. 길을 잃으면 안 되니까요.\" 사람들은 떨리는 손을 마주 잡았답니다.",
+          "blanks": [
+            {
+              "id": "B2",
+              "answer": { "word": "방향", "hanja": "方向" },
+              "etymology": [
+                { "char": "方", "sound": "방", "meaning": "모(방위)" },
+                { "char": "向", "sound": "향", "meaning": "향할" }
+              ],
+              "morphemeHints": ["方", "向", "前", "後", "東", "西"],
+              "contextClues": ["길을 잃으면", "차례로 손", "차분한 목소리"]
+            }
+          ]
+        },
+        {
+          "text": "안개 속에서 길은 마치 미로처럼 [B3]했어요. 다행히 대장은 미리 정상까지 가는 길을 외워두었지요. 작은 깃발을 곳곳에 꽂아두어 돌아갈 때 길잡이로 삼았어요.",
+          "blanks": [
+            {
+              "id": "B3",
+              "answer": { "word": "복잡", "hanja": "複雜" },
+              "etymology": [
+                { "char": "複", "sound": "복", "meaning": "겹칠" },
+                { "char": "雜", "sound": "잡", "meaning": "섞일" }
+              ],
+              "morphemeHints": ["複", "雜", "難", "多", "亂", "間"],
+              "contextClues": ["미로처럼", "곳곳에 꽂아두", "길잡이"]
+            }
+          ]
+        },
+        {
+          "text": "한참 후 햇빛이 비치자 안개가 [B4]을 시작했어요. 어느새 정상이 환하게 드러나고, 멀리 마을이 보였답니다. 모두가 서로를 보며 \"우리가 해냈다!\" 하고 환호했어요.",
+          "blanks": [
+            {
+              "id": "B4",
+              "answer": { "word": "소멸", "hanja": "消滅" },
+              "etymology": [
+                { "char": "消", "sound": "소", "meaning": "사라질" },
+                { "char": "滅", "sound": "멸", "meaning": "멸할" }
+              ],
+              "morphemeHints": ["消", "滅", "失", "去", "光", "明"],
+              "contextClues": ["햇빛이 비치자", "환하게 드러나", "안개가"]
+            }
+          ]
+        }
+      ],
+      "boss": "오리무중"
+    },
+
+    {
+      "id": "g6-105",
+      "title": "일석이조 — 어부의 행운",
+      "grade": 6,
+      "level": "advanced",
+      "charCount": 596,
+      "estimatedReadingMs": 325000,
+      "pages": [
+        {
+          "text": "어느 날 아침, 어부가 강가에 그물을 던졌어요. 그런데 그물에 큰 [B1] 두 마리가 한꺼번에 걸려 올라온 것이지요. 어부는 깜짝 놀라 함박웃음을 지었답니다.",
+          "blanks": [
+            {
+              "id": "B1",
+              "answer": { "word": "어류", "hanja": "魚類" },
+              "etymology": [
+                { "char": "魚", "sound": "어", "meaning": "물고기" },
+                { "char": "類", "sound": "류", "meaning": "무리" }
+              ],
+              "morphemeHints": ["魚", "類", "鳥", "牛", "馬", "海"],
+              "contextClues": ["그물", "강가", "두 마리", "한꺼번에 걸려"]
+            }
+          ]
+        },
+        {
+          "text": "한 마리는 가족과 함께 [B2]로 삼고, 또 한 마리는 시장에 내다 팔기로 했어요. 한 번의 노력으로 두 가지 이득을 얻은 셈이었지요. \"오늘은 정말 운이 좋구나!\"",
+          "blanks": [
+            {
+              "id": "B2",
+              "answer": { "word": "식사", "hanja": "食事" },
+              "etymology": [
+                { "char": "食", "sound": "식", "meaning": "밥" },
+                { "char": "事", "sound": "사", "meaning": "일" }
+              ],
+              "morphemeHints": ["食", "事", "家", "夫", "農", "果"],
+              "contextClues": ["가족과 함께", "한 마리는", "운이 좋구나"]
+            }
+          ]
+        },
+        {
+          "text": "어부는 시장으로 가는 길에 우연히 옛 친구를 만났어요. 친구는 마침 좋은 그물을 만드는 [B3]이었지요. 두 사람은 서로의 안부를 묻고, 다음 주에 함께 일하기로 약속했답니다.",
+          "blanks": [
+            {
+              "id": "B3",
+              "answer": { "word": "장인", "hanja": "匠人" },
+              "etymology": [
+                { "char": "匠", "sound": "장", "meaning": "장인" },
+                { "char": "人", "sound": "인", "meaning": "사람" }
+              ],
+              "morphemeHints": ["匠", "人", "工", "夫", "作", "事"],
+              "contextClues": ["좋은 그물을 만드는", "친구", "함께 일하기로"]
+            }
+          ]
+        },
+        {
+          "text": "집으로 돌아가는 길, 어부는 콧노래를 흥얼거리며 생각했어요. \"오늘 하루는 정말 [B4]이로구나. 작은 행운들이 모이면 큰 복이 된다더니, 그 말이 맞았어.\"",
+          "blanks": [
+            {
+              "id": "B4",
+              "answer": { "word": "행복", "hanja": "幸福" },
+              "etymology": [
+                { "char": "幸", "sound": "행", "meaning": "다행" },
+                { "char": "福", "sound": "복", "meaning": "복" }
+              ],
+              "morphemeHints": ["幸", "福", "樂", "心", "和", "美"],
+              "contextClues": ["콧노래", "작은 행운들이 모이면", "큰 복"]
+            }
+          ]
+        }
+      ],
+      "boss": "일석이조"
+    }
+  ]
+}

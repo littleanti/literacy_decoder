@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "corpora": [
+    { "id": "g5-001", "title": "농부와 도깨비",   "grade": 5, "level": "intro", "charCount": 156, "estimatedReadingMs": 90000,  "boss": null,         "source": "grade5.json" },
+    { "id": "g5-002", "title": "햇님과 달님",     "grade": 5, "level": "intro", "charCount": 138, "estimatedReadingMs": 80000,  "boss": null,         "source": "grade5.json" },
+    { "id": "g5-003", "title": "토끼의 재판",     "grade": 5, "level": "intro", "charCount": 148, "estimatedReadingMs": 85000,  "boss": null,         "source": "grade5.json" },
+    { "id": "g5-004", "title": "흥부와 놀부",     "grade": 5, "level": "intro", "charCount": 164, "estimatedReadingMs": 95000,  "boss": null,         "source": "grade5.json" },
+    { "id": "g5-005", "title": "별나라 여행",     "grade": 5, "level": "intro", "charCount": 152, "estimatedReadingMs": 90000,  "boss": null,         "source": "grade5.json" },
+
+    { "id": "g6-001", "title": "장군의 결심",     "grade": 6, "level": "mid",   "charCount": 322, "estimatedReadingMs": 180000, "boss": null,         "source": "grade6.json" },
+    { "id": "g6-002", "title": "발명가의 하루",   "grade": 6, "level": "mid",   "charCount": 348, "estimatedReadingMs": 200000, "boss": null,         "source": "grade6.json" },
+    { "id": "g6-003", "title": "물고기의 회의",   "grade": 6, "level": "mid",   "charCount": 304, "estimatedReadingMs": 175000, "boss": null,         "source": "grade6.json" },
+    { "id": "g6-004", "title": "바람과 해의 내기", "grade": 6, "level": "mid",   "charCount": 286, "estimatedReadingMs": 170000, "boss": null,         "source": "grade6.json" },
+    { "id": "g6-005", "title": "민들레의 비행",   "grade": 6, "level": "mid",   "charCount": 332, "estimatedReadingMs": 190000, "boss": null,         "source": "grade6.json" },
+
+    { "id": "g6-101", "title": "동문서답 — 철수와 영희",   "grade": 6, "level": "advanced", "charCount": 612, "estimatedReadingMs": 330000, "boss": "동문서답",   "source": "grade6.json" },
+    { "id": "g6-102", "title": "백발백중 — 활쏘기 명수",   "grade": 6, "level": "advanced", "charCount": 588, "estimatedReadingMs": 320000, "boss": "백발백중",   "source": "grade6.json" },
+    { "id": "g6-103", "title": "천고마비 — 가을의 들판",   "grade": 6, "level": "advanced", "charCount": 624, "estimatedReadingMs": 340000, "boss": "천고마비",   "source": "grade6.json" },
+    { "id": "g6-104", "title": "오리무중 — 안개 속 등반",  "grade": 6, "level": "advanced", "charCount": 602, "estimatedReadingMs": 325000, "boss": "오리무중",   "source": "grade6.json" },
+    { "id": "g6-105", "title": "일석이조 — 어부의 행운",   "grade": 6, "level": "advanced", "charCount": 596, "estimatedReadingMs": 325000, "boss": "일석이조",   "source": "grade6.json" }
+  ]
+}
