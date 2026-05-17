@@ -5,9 +5,9 @@
 // 7단계가 진실의 근원 — 신규 사자성어가 늘어나면 7단계 data.js를 업데이트하고
 // 본 파일의 BOSS_META 매핑만 보강하면 된다.
 
-// 7단계 원본 import 시도, 실패 시 임베디드 카피로 fallback (오프라인 / 미배포 호환).
-// 7단계 data.js 가 `export` 키워드 없이 전역 const 로 정의된 경우(현재 상태) 에도
-// import 자체는 성공하지만 SAJASUNGO_DATA 이 undefined 이므로 두 케이스 모두 대비.
+// 기본은 embedded fallback. 7단계가 같은 사이트로 함께 배포된 경우
+// `?seventh-stage=1` 쿼리 파라미터로 원본 데이터를 옵트인 import 한다.
+// (현재 7단계 data.js 는 `export` 없이 전역 const 만 정의하므로 globalThis 도 함께 확인)
 const EMBEDDED_FALLBACK = [
   { word: "일석이조", meaning: "두 가지 이득",       hint: "돌 하나로 새 두 마리를 잡아요" },
   { word: "이심전심", meaning: "마음이 통함",         hint: "말하지 않아도 서로 마음이 통해요" },
@@ -22,14 +22,16 @@ const EMBEDDED_FALLBACK = [
 ];
 
 let SAJASUNGO_DATA = EMBEDDED_FALLBACK;
+
 try {
-  const mod = await import("../../../7_four-character_idiom_crossword/data.js");
-  if (Array.isArray(mod?.SAJASUNGO_DATA) && mod.SAJASUNGO_DATA.length > 0) {
-    SAJASUNGO_DATA = mod.SAJASUNGO_DATA;
-  }
-  // 7단계가 `export` 없이 전역 const 만 정의한 경우, globalThis.SAJASUNGO_DATA 로 노출될 수 있음
-  else if (Array.isArray(globalThis.SAJASUNGO_DATA) && globalThis.SAJASUNGO_DATA.length > 0) {
-    SAJASUNGO_DATA = globalThis.SAJASUNGO_DATA;
+  const url = new URL(globalThis.location?.href || "http://_/");
+  if (url.searchParams.get("seventh-stage") === "1") {
+    const mod = await import("../../../7_four-character_idiom_crossword/data.js");
+    if (Array.isArray(mod?.SAJASUNGO_DATA) && mod.SAJASUNGO_DATA.length > 0) {
+      SAJASUNGO_DATA = mod.SAJASUNGO_DATA;
+    } else if (Array.isArray(globalThis.SAJASUNGO_DATA) && globalThis.SAJASUNGO_DATA.length > 0) {
+      SAJASUNGO_DATA = globalThis.SAJASUNGO_DATA;
+    }
   }
 } catch (_err) {
   // 인접 디렉터리 부재 / 네트워크 오류 등 — fallback 사용
