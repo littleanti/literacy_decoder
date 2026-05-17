@@ -5,9 +5,19 @@
 
 ## 📍 현재 상태
 
-**전체**: 🚧 미구현 / 설계 단계
-**완료**: AGENTS.md, PRD.md, TRD.md
-**다음 단계**: Phase 0 — 데이터 모델 정의 + 인접 단계 호환 검증
+**전체**: ✅ v1.0 구현 완료 (Phase 0 ~ 6)
+**완료**: AGENTS.md, PRD.md, TRD.md, Phase 0 ~ Phase 6 전 구현
+**리포지토리**: https://github.com/littleanti/literacy_decoder
+**실행**: `npm run dev` → http://localhost:3006
+
+### Phase 완료 요약
+- ✅ **Phase 0**: 한자 마스터 DB (~280자), 코퍼스 스키마, IndexedDB 래퍼, 빌드 마커 스크립트
+- ✅ **Phase 1**: 시작/읽기/종료 화면, 빈칸 드래그 매칭, 어원 풀이, IndexedDB 진척도 저장
+- ✅ **Phase 2**: 페이지 단위 검증, 키보드/스와이프 이동, 태블릿 분할 레이아웃
+- ✅ **Phase 3**: 사자성어 보스 4×1 슬롯, 7단계 게이트웨이 (`window.literacyDecoderGateway`)
+- ✅ **Phase 4**: 어원 풀이 모달 + 형태소 애니메이션, 루비 텍스트, TTS 지문 낭독 + 한자 음 발음
+- ✅ **Phase 5**: Vanilla SVG 대시보드, SRL 망각 곡선, export/import
+- ✅ **Phase 6**: PWA (manifest + sw.js), 응용 작문 미션, 다크 모드, 폰트 크기 조절
 
 ## 🎯 마일스톤 개요
 
