@@ -5,26 +5,34 @@
 // 7단계가 진실의 근원 — 신규 사자성어가 늘어나면 7단계 data.js를 업데이트하고
 // 본 파일의 BOSS_META 매핑만 보강하면 된다.
 
-// 7단계 원본 import 시도, 실패 시 임베디드 카피로 fallback (오프라인 호환)
-let SAJASUNGO_DATA;
+// 7단계 원본 import 시도, 실패 시 임베디드 카피로 fallback (오프라인 / 미배포 호환).
+// 7단계 data.js 가 `export` 키워드 없이 전역 const 로 정의된 경우(현재 상태) 에도
+// import 자체는 성공하지만 SAJASUNGO_DATA 이 undefined 이므로 두 케이스 모두 대비.
+const EMBEDDED_FALLBACK = [
+  { word: "일석이조", meaning: "두 가지 이득",       hint: "돌 하나로 새 두 마리를 잡아요" },
+  { word: "이심전심", meaning: "마음이 통함",         hint: "말하지 않아도 서로 마음이 통해요" },
+  { word: "동문서답", meaning: "엉뚱한 대답",         hint: "동쪽을 물었는데 서쪽으로 대답해요" },
+  { word: "오리무중", meaning: "갈피를 못 잡음",      hint: "짙은 안개 속에서 길을 잃었어요" },
+  { word: "일취월장", meaning: "날로 발전함",         hint: "날마다 달마다 실력이 쑥쑥 자라요" },
+  { word: "청출어람", meaning: "제자가 스승보다 나음", hint: "쪽빛이 남빛보다 더 파래요" },
+  { word: "천고마비", meaning: "가을 하늘과 살찐 말", hint: "하늘은 높고 말은 살이 쪄요" },
+  { word: "화룡점정", meaning: "마지막 마무리",       hint: "용 그림에 눈동자를 찍어 완성해요" },
+  { word: "대기만성", meaning: "늦게 이루는 큰 인물", hint: "큰 그릇은 오래 걸려야 만들어져요" },
+  { word: "백발백중", meaning: "항상 맞힘",           hint: "백 번 쏘면 백 번 다 맞혀요" },
+];
+
+let SAJASUNGO_DATA = EMBEDDED_FALLBACK;
 try {
-  // 동적 import — 7단계가 같은 부모 디렉터리에 있을 때만 작동
   const mod = await import("../../../7_four-character_idiom_crossword/data.js");
-  SAJASUNGO_DATA = mod.SAJASUNGO_DATA;
+  if (Array.isArray(mod?.SAJASUNGO_DATA) && mod.SAJASUNGO_DATA.length > 0) {
+    SAJASUNGO_DATA = mod.SAJASUNGO_DATA;
+  }
+  // 7단계가 `export` 없이 전역 const 만 정의한 경우, globalThis.SAJASUNGO_DATA 로 노출될 수 있음
+  else if (Array.isArray(globalThis.SAJASUNGO_DATA) && globalThis.SAJASUNGO_DATA.length > 0) {
+    SAJASUNGO_DATA = globalThis.SAJASUNGO_DATA;
+  }
 } catch (_err) {
-  // 7단계 코드가 별도 배포되어 있을 때를 대비한 fallback (코어 10개)
-  SAJASUNGO_DATA = [
-    { word: "일석이조", meaning: "두 가지 이득",       hint: "돌 하나로 새 두 마리를 잡아요" },
-    { word: "이심전심", meaning: "마음이 통함",         hint: "말하지 않아도 서로 마음이 통해요" },
-    { word: "동문서답", meaning: "엉뚱한 대답",         hint: "동쪽을 물었는데 서쪽으로 대답해요" },
-    { word: "오리무중", meaning: "갈피를 못 잡음",      hint: "짙은 안개 속에서 길을 잃었어요" },
-    { word: "일취월장", meaning: "날로 발전함",         hint: "날마다 달마다 실력이 쑥쑥 자라요" },
-    { word: "청출어람", meaning: "제자가 스승보다 나음", hint: "쪽빛이 남빛보다 더 파래요" },
-    { word: "천고마비", meaning: "가을 하늘과 살찐 말", hint: "하늘은 높고 말은 살이 쪄요" },
-    { word: "화룡점정", meaning: "마지막 마무리",       hint: "용 그림에 눈동자를 찍어 완성해요" },
-    { word: "대기만성", meaning: "늦게 이루는 큰 인물", hint: "큰 그릇은 오래 걸려야 만들어져요" },
-    { word: "백발백중", meaning: "항상 맞힘",           hint: "백 번 쏘면 백 번 다 맞혀요" },
-  ];
+  // 인접 디렉터리 부재 / 네트워크 오류 등 — fallback 사용
 }
 
 export { SAJASUNGO_DATA };

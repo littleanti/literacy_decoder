@@ -1,0 +1,48 @@
+/* 반응형 — 폰 (≤600px), 태블릿 (≥768px) */
+
+/* 폰 */
+@media (max-width: 600px) {
+  .container { max-width: 100%; }
+  .read-page-body { font-size: var(--reading-font-size); padding: 18px 14px; }
+  .morpheme-dock-cards { grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); }
+  .start-screen h1 { font-size: 2.4rem; }
+}
+
+/* 태블릿 — 좌 65% 지문 / 우 35% 도크 + 어원 */
+@media (min-width: 768px) {
+  #read-screen.active {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    grid-template-rows: auto auto auto;
+    gap: 14px;
+  }
+  #read-screen .play-header { grid-column: 1 / -1; }
+  #read-screen .read-progress-row { grid-column: 1 / -1; }
+  #read-screen .progress-bar { grid-column: 1 / -1; }
+
+  #read-screen .read-page-body { grid-column: 1; grid-row: 4 / span 2; min-height: 420px; }
+  #read-screen .read-page-nav { grid-column: 1; grid-row: 6; }
+  #read-screen .morpheme-dock {
+    position: sticky;
+    grid-column: 2;
+    grid-row: 4 / span 3;
+    transform: none;
+    bottom: auto;
+    border-top: none;
+    border: 3px solid var(--navy);
+    border-radius: 20px;
+    align-self: start;
+    padding: 14px;
+    box-shadow: 0 4px 0 var(--navy);
+  }
+  .read-screen { padding-bottom: 20px; }
+}
+
+/* 다크 모드 미세 조정 */
+html.dark .blank { background: rgba(255,119,87,0.18); }
+html.dark .blank-char { color: #FFB4A0; }
+html.dark .blank ruby { color: #F3EFDF; }
+html.dark .read-page-body { background: var(--color-surface); }
+html.dark .morpheme-dock { background: var(--color-surface); }
+html.dark .morpheme-card { background: var(--color-surface2); }
+html.dark .toast { background: #1A1C2B; color: #F3EFDF; }

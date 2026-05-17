@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>📖 문해력 해독기</title>
+  <meta name="description" content="지문 속 한자어를 형태소와 문맥으로 추론하는 한글 학습 게임" />
+  <meta name="theme-color" content="#FF7757" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.json" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="src/css/tokens.css" />
+  <link rel="stylesheet" href="src/css/base.css" />
+  <link rel="stylesheet" href="src/css/components.css" />
+  <link rel="stylesheet" href="src/css/screens.css" />
+  <link rel="stylesheet" href="src/css/reading.css" />
+  <link rel="stylesheet" href="src/css/responsive.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- 시작 화면 -->
+    <section id="start-screen" class="screen start-screen active">
+      <div class="start-emoji">📖</div>
+      <h1>문해력 해독기</h1>
+      <p class="subtitle">지문 속 빈칸을 형태소와 문맥으로 풀어 보세요</p>
+
+      <div class="level-label">학년</div>
+      <div class="grade-buttons">
+        <button id="grade5-btn" class="chip">초등 5학년</button>
+        <button id="grade6-btn" class="chip">초등 6학년</button>
+      </div>
+
+      <div id="start-progress-summary" class="start-progress-summary"></div>
+
+      <div class="start-action-row">
+        <button id="start-play-btn" class="btn big">시작 →</button>
+        <button id="start-continue-btn" class="btn mint" style="display:none">이어하기</button>
+      </div>
+
+      <div class="start-sub-row">
+        <button id="start-dashboard-btn" class="btn-settings">📊 학습 기록</button>
+        <button id="start-settings-btn" class="btn-settings">⚙ 설정</button>
+      </div>
+    </section>
+
+    <!-- 설정 화면 -->
+    <section id="settings-screen" class="screen settings-screen">
+      <div class="settings-header">
+        <h2>설정</h2>
+        <button id="settings-back-btn" class="close-btn" aria-label="뒤로">×</button>
+      </div>
+
+      <div class="settings-section">
+        <div class="section-label">📏 본문 글자 크기</div>
+        <label class="radio-row"><input type="radio" name="font-size" value="16" /> 작게 (16px)</label>
+        <label class="radio-row"><input type="radio" name="font-size" value="18" /> 보통 (18px)</label>
+        <label class="radio-row"><input type="radio" name="font-size" value="22" /> 크게 (22px)</label>
+      </div>
+
+      <div class="settings-section">
+        <div class="toggle-row">
+          <div class="toggle-label">🌙 다크 모드</div>
+          <button id="dark-toggle" class="toggle" aria-label="다크 모드 토글"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 읽기 화면 -->
+    <section id="read-screen" class="screen read-screen">
+      <header class="play-header">
+        <button id="read-quit-btn" class="quit-btn">↩ 종료</button>
+        <h2 id="read-title" class="read-title"></h2>
+        <button id="read-tts-btn" class="tts-button" aria-label="지문 낭독">🔊</button>
+      </header>
+
+      <div class="read-progress-row">
+        <span id="read-progress-text" class="progress-text">빈칸 0 / 0</span>
+        <span id="read-page-indicator" class="page-indicator">1 / 1</span>
+      </div>
+      <div class="progress-bar"><div id="read-progress-fill" class="progress-fill"></div></div>
+
+      <article id="read-page-body" class="read-page-body" aria-live="polite"></article>
+
+      <nav class="read-page-nav">
+        <button id="read-prev-btn" class="btn small ghost">← 이전</button>
+        <button id="read-next-btn" class="btn small">다음 →</button>
+      </nav>
+
+      <aside id="morpheme-dock" class="morpheme-dock">
+        <div class="morpheme-dock-label">형태소 도크 — 빈칸에 끌어 놓거나 탭하세요</div>
+        <div id="morpheme-dock-cards" class="morpheme-dock-cards"></div>
+      </aside>
+    </section>
+
+    <!-- 보스 스테이지 -->
+    <section id="boss-screen" class="screen boss-screen">
+      <header class="play-header">
+        <button id="boss-quit-btn" class="quit-btn">↩ 포기</button>
+        <h2 id="boss-title" class="read-title">🐉 사자성어 보스</h2>
+        <div></div>
+      </header>
+      <p id="boss-story" class="boss-story"></p>
+      <p id="boss-hint" class="boss-hint"></p>
+      <div id="boss-slots" class="boss-slots"></div>
+      <div id="boss-pool" class="boss-pool"></div>
+      <div class="boss-actions">
+        <button id="boss-reset-btn" class="btn small ghost">다시 배치</button>
+        <button id="boss-submit-btn" class="btn">정답 제출</button>
+      </div>
+    </section>
+
+    <!-- 대시보드 -->
+    <section id="dashboard-screen" class="screen dashboard-screen">
+      <header class="play-header">
+        <button id="dashboard-back-btn" class="quit-btn">↩ 뒤로</button>
+        <h2 class="read-title">📊 학습 기록</h2>
+        <div></div>
+      </header>
+      <div id="dashboard-body" class="dashboard-body"></div>
+    </section>
+
+    <!-- 종료 화면 -->
+    <section id="end-screen" class="screen end-screen"></section>
+  </div>
+
+  <div id="toast-layer" class="toast-layer" aria-live="polite"></div>
+
+  <script type="module" src="src/js/main.js"></script>
+</body>
+</html>

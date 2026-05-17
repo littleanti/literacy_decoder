@@ -1,0 +1,44 @@
+/* 디자인 토큰 — 1_chosung_quiz와 동일 팔레트 + 본 게임 전용 토큰 */
+:root {
+  /* 1단계 색상 팔레트 (그대로) */
+  --cream: #FFF6E4;
+  --coral: #FF7757;
+  --coral-dark: #d45a40;
+  --mint: #6BCAB8;
+  --mint-dark: #4fa192;
+  --navy: #2D3047;
+  --navy-dark: #1a1c2b;
+  --yellow: #FFD166;
+  --yellow-dark: #d4ad4e;
+  --pink: #FFB5B5;
+  --red: #E84545;
+  --red-dark: #b63333;
+  --gray: #E5E1D6;
+
+  --shadow: rgba(45, 48, 71, 0.15);
+
+  /* 시맨틱 토큰 */
+  --color-bg: var(--cream);
+  --color-text: var(--navy);
+  --color-text-dim: #6b6e82;
+  --color-surface: #FFFFFF;
+  --color-surface2: #F5EDD8;
+  --color-border: var(--gray);
+
+  /* 본 게임 전용 */
+  --reading-font-size: 18px;
+  --hanja-font: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --blank-bg: rgba(255, 119, 87, 0.08);
+  --blank-active: rgba(255, 209, 102, 0.4);
+}
+
+html.dark {
+  --color-bg: #1A1C2B;
+  --color-text: #F3EFDF;
+  --color-text-dim: #B8B4A2;
+  --color-surface: #2D3047;
+  --color-surface2: #3a3d56;
+  --color-border: #4a4e6c;
+  --blank-bg: rgba(255, 119, 87, 0.18);
+  --blank-active: rgba(255, 209, 102, 0.3);
+}

@@ -1,0 +1,314 @@
+/* 화면별 — start / settings / boss / dashboard / end */
+
+/* 시작 화면 */
+#start-screen.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 24px;
+  text-align: center;
+}
+
+.start-screen h1 {
+  font-family: 'Jua', sans-serif;
+  font-size: 3rem;
+  color: var(--coral);
+  transform: rotate(-2deg);
+  text-shadow: 4px 4px 0 var(--yellow);
+  letter-spacing: 2px;
+}
+
+.start-screen .subtitle {
+  font-family: 'Jua', sans-serif;
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
+  color: var(--color-text-dim);
+}
+
+.start-emoji {
+  font-size: 5rem;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+
+.level-label {
+  font-family: 'Jua', sans-serif;
+  font-size: 1rem;
+  color: var(--color-text-dim);
+}
+
+.grade-buttons {
+  display: flex; gap: 12px;
+}
+
+.start-progress-summary {
+  font-family: 'Gowun Dodum';
+  color: var(--color-text-dim);
+  font-size: 0.95rem;
+}
+
+.start-action-row {
+  display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
+}
+
+.start-sub-row {
+  display: flex; gap: 10px;
+}
+
+.btn-settings {
+  font-family: 'Jua', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-dim);
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: 24px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.btn-settings:active { background: var(--color-surface2); color: var(--color-text); }
+
+/* 설정 화면 */
+.settings-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 1.5rem; padding: 0 4px;
+}
+.settings-header h2 {
+  font-family: 'Jua', sans-serif;
+  font-size: 1.8rem;
+  color: var(--coral);
+}
+.settings-section {
+  background: var(--color-surface);
+  border: 2px solid var(--navy);
+  border-radius: 20px;
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 0 var(--navy);
+}
+.section-label {
+  font-family: 'Jua', sans-serif;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  display: flex; align-items: center; gap: 6px;
+}
+.toggle-row {
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+/* 공통 헤더 (read / boss / dashboard) */
+.play-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.8rem;
+}
+.quit-btn {
+  background: none;
+  border: 2px solid var(--navy);
+  border-radius: 100px;
+  padding: 4px 12px;
+  font-family: 'Jua', sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: var(--color-text);
+  opacity: 0.7;
+}
+.quit-btn:active { opacity: 1; transform: scale(0.96); }
+.read-title {
+  font-family: 'Jua', sans-serif;
+  color: var(--coral);
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* 보스 화면 */
+.boss-screen { padding: 8px 0; }
+.boss-story {
+  font-family: 'Gowun Dodum';
+  font-size: clamp(0.95rem, 3.4vw, 1.1rem);
+  padding: 16px 18px;
+  background: var(--color-surface);
+  border: 2px solid var(--navy);
+  border-radius: 18px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 0 var(--navy);
+  line-height: 1.7;
+}
+.boss-hint {
+  color: var(--color-text-dim);
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 18px;
+}
+.boss-slots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  max-width: 360px;
+  margin: 0 auto 20px;
+}
+.boss-slot {
+  aspect-ratio: 1;
+  border: 3px dashed var(--navy);
+  border-radius: 16px;
+  background: var(--color-surface);
+  font-family: var(--hanja-font);
+  font-size: 2rem;
+  color: var(--coral);
+  cursor: pointer;
+  font-weight: 700;
+}
+.boss-slot.filled {
+  border-style: solid;
+  background: var(--yellow);
+  color: var(--navy);
+}
+.boss-slot.ok { background: var(--mint); color: white; }
+.boss-slot.no { background: var(--red); color: white; }
+
+.boss-pool {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.boss-card {
+  background: var(--color-surface);
+  border: 2px solid var(--navy);
+  border-radius: 14px;
+  padding: 10px 6px;
+  font-family: 'Jua', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 3px 0 var(--navy);
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+}
+.boss-card:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--navy); }
+.boss-card.used { opacity: 0.35; }
+.boss-card-char { font-family: var(--hanja-font); font-size: 1.6rem; color: var(--coral); font-weight: 700; }
+.boss-card-sound { font-size: 0.75rem; color: var(--mint-dark); }
+.boss-card-meaning { font-size: 0.7rem; color: var(--color-text-dim); }
+
+.boss-actions { display: flex; justify-content: center; gap: 10px; }
+
+.boss-result {
+  text-align: center;
+  display: flex; flex-direction: column; gap: 10px;
+  padding: 8px;
+}
+.boss-result-emoji { font-size: 3rem; }
+.boss-result h3 {
+  font-family: 'Jua', sans-serif;
+  font-size: 1.8rem;
+  color: var(--coral);
+}
+.boss-result-word {
+  font-family: var(--hanja-font);
+  font-size: 1.6rem;
+  color: var(--navy);
+  font-weight: 700;
+}
+.boss-result-meaning { color: var(--color-text-dim); }
+.boss-result-gateway {
+  background: var(--mint);
+  color: white;
+  padding: 10px;
+  border-radius: 14px;
+  font-family: 'Jua', sans-serif;
+}
+
+/* 대시보드 */
+.dashboard-body { padding: 0 4px 20px; }
+.dash-counters {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.dash-counter {
+  background: var(--color-surface);
+  border: 2px solid var(--navy);
+  border-radius: 16px;
+  padding: 14px 10px;
+  text-align: center;
+  box-shadow: 0 3px 0 var(--navy);
+}
+.dash-counter-emoji { font-size: 1.6rem; }
+.dash-counter-value { font-family: 'Jua', sans-serif; font-size: 1.6rem; color: var(--coral); }
+.dash-counter-label { font-size: 0.85rem; color: var(--color-text-dim); }
+.dash-section-title {
+  font-family: 'Jua', sans-serif;
+  font-size: 1.1rem;
+  color: var(--coral);
+  margin: 18px 0 8px;
+}
+.dash-chart { width: 100%; height: auto; background: var(--color-surface); border-radius: 14px; padding: 8px; }
+.dash-empty {
+  color: var(--color-text-dim);
+  background: var(--color-surface);
+  padding: 18px;
+  border-radius: 14px;
+  text-align: center;
+  border: 1px dashed var(--color-border);
+}
+.dash-mistake-list {
+  display: flex; flex-direction: column; gap: 6px;
+}
+.dash-mistake-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 12px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+.dash-mistake-char {
+  font-family: var(--hanja-font); font-size: 1.4rem; color: var(--coral); font-weight: 700;
+}
+.dash-mistake-meta { color: var(--color-text-dim); font-size: 0.85rem; }
+.dash-tools { display: flex; gap: 10px; justify-content: center; margin-top: 20px; }
+
+/* 종료 화면 */
+#end-screen .end-screen {
+  text-align: center;
+  padding: 20px 16px;
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+}
+.end-screen h2 {
+  font-family: 'Jua', sans-serif;
+  font-size: 2.1rem;
+  color: var(--coral);
+}
+.celebration-emojis {
+  font-size: 2.5rem;
+  letter-spacing: 0.3rem;
+  animation: wiggle 1.5s ease-in-out infinite;
+}
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50%      { transform: rotate(3deg); }
+}
+.final-score {
+  font-family: 'Jua', sans-serif;
+  font-size: 2.6rem;
+  color: var(--navy);
+}
+.final-score .num { color: var(--coral); }
+.end-message {
+  font-family: 'Gowun Dodum';
+  font-size: 1rem;
+  color: var(--color-text-dim);
+}
+.boss-result-banner {
+  padding: 14px 18px;
+  border-radius: 14px;
+  font-family: 'Jua', sans-serif;
+}
+.boss-result-banner.pass { background: var(--mint); color: white; }
+.boss-result-banner.fail { background: var(--gray); color: var(--navy); }
+.end-buttons { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }

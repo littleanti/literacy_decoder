@@ -1,0 +1,231 @@
+/* 읽기 화면 — 지문 + 빈칸 + 형태소 도크 */
+
+.read-screen { padding: 4px 0 200px; /* 도크 영역 확보 */ }
+
+.read-progress-row {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 6px;
+  font-family: 'Jua', sans-serif;
+  font-size: 0.95rem;
+  color: var(--color-text-dim);
+}
+
+.progress-bar {
+  height: 10px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 100px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border: 2px solid var(--navy);
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--coral), var(--yellow));
+  transition: width 0.5s ease;
+  border-radius: 100px;
+}
+
+.read-page-body {
+  background: var(--color-surface);
+  border: 2px solid var(--navy);
+  border-radius: 20px;
+  padding: 22px 20px;
+  font-family: 'Gowun Dodum';
+  font-size: var(--reading-font-size);
+  line-height: 2;
+  color: var(--color-text);
+  box-shadow: 0 4px 0 var(--navy);
+  min-height: 240px;
+  word-break: keep-all;
+  margin-bottom: 12px;
+}
+
+/* 빈칸 셀 */
+.blank {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  padding: 2px 6px;
+  margin: 0 2px;
+  background: var(--blank-bg);
+  border: 2px dashed var(--coral);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.12s, border-color 0.18s;
+  vertical-align: middle;
+  min-width: 56px;
+  justify-content: center;
+}
+.blank.active {
+  background: var(--blank-active);
+  border-style: solid;
+  animation: pulseBlank 1.4s ease-in-out infinite;
+}
+@keyframes pulseBlank {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 209, 102, 0.6); }
+  50%      { box-shadow: 0 0 0 6px rgba(255, 209, 102, 0); }
+}
+.blank.filled {
+  background: transparent;
+  border-color: transparent;
+  cursor: default;
+}
+.blank.drag-over { background: var(--yellow); }
+
+.blank-char {
+  display: inline-block;
+  width: 1.2em;
+  text-align: center;
+  font-family: var(--hanja-font);
+  font-weight: 700;
+  color: var(--coral);
+}
+.blank-char.placed { color: var(--navy); }
+.blank-char.ok { color: var(--mint-dark); }
+.blank-char.no { color: var(--red); }
+
+.blank ruby {
+  ruby-position: over;
+  font-family: var(--hanja-font);
+  font-weight: 700;
+  color: var(--navy);
+}
+.blank ruby rt {
+  font-family: 'Gowun Dodum';
+  font-size: 0.55em;
+  color: var(--mint-dark);
+  font-weight: 400;
+}
+
+.read-page-nav {
+  display: flex; justify-content: space-between; gap: 10px;
+  margin-bottom: 12px;
+}
+
+/* 형태소 도크 (하단 sticky) */
+.morpheme-dock {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  background: var(--color-surface);
+  border-top: 3px solid var(--navy);
+  padding: 12px 14px 16px;
+  padding-bottom: calc(16px + env(safe-area-inset-bottom));
+  box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.12);
+  z-index: 20;
+  transition: transform 0.25s ease;
+  transform: translateY(60%);
+}
+.morpheme-dock.expanded { transform: translateY(0); }
+
+.morpheme-dock-label {
+  font-family: 'Jua', sans-serif;
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.morpheme-dock-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.morpheme-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 6px;
+  background: var(--color-bg);
+  border: 2px solid var(--navy);
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 3px 0 var(--navy);
+  transition: transform 0.08s, box-shadow 0.08s, opacity 0.2s;
+  font-family: 'Jua', sans-serif;
+  color: var(--color-text);
+}
+.morpheme-card:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--navy); }
+.morpheme-card.dragging { opacity: 0.5; }
+.morpheme-char {
+  font-family: var(--hanja-font);
+  font-size: 1.6rem;
+  color: var(--coral);
+  font-weight: 700;
+  line-height: 1;
+}
+.morpheme-sound { font-size: 0.85rem; color: var(--mint-dark); }
+.morpheme-meaning { font-size: 0.75rem; color: var(--color-text-dim); }
+
+.tts-button {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--yellow);
+  border: 2px solid var(--navy);
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 3px 0 var(--yellow-dark);
+}
+.tts-button:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--yellow-dark); }
+
+.page-indicator {
+  font-family: 'Jua', sans-serif;
+  font-size: 0.95rem;
+  color: var(--coral);
+  background: var(--yellow);
+  padding: 4px 12px;
+  border-radius: 100px;
+  box-shadow: 0 2px 0 var(--yellow-dark);
+}
+
+/* 어원 풀이 카드 (모달 내부) */
+.etymology-card {
+  display: flex; flex-direction: column; gap: 12px; align-items: center;
+}
+.etymology-word {
+  font-family: var(--hanja-font);
+  font-size: 1.5rem;
+  color: var(--coral);
+  font-weight: 700;
+}
+.etymology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+.etymology-morph {
+  background: var(--color-surface);
+  border: 2px solid var(--navy);
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 3px 0 var(--navy);
+  animation: morphPop 0.4s ease backwards;
+}
+.etymology-morph:nth-child(2) { animation-delay: 0.15s; }
+.etymology-morph:nth-child(3) { animation-delay: 0.3s; }
+.etymology-morph:nth-child(4) { animation-delay: 0.45s; }
+@keyframes morphPop {
+  from { opacity: 0; transform: scale(0.7); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.etymology-char {
+  font-family: var(--hanja-font);
+  font-size: 2rem;
+  color: var(--coral);
+  font-weight: 700;
+  cursor: pointer;
+}
+.etymology-sound { font-size: 0.95rem; color: var(--mint-dark); font-family: 'Jua', sans-serif; }
+.etymology-meaning { font-size: 0.85rem; color: var(--color-text-dim); }
+.etymology-explain {
+  font-family: 'Gowun Dodum';
+  font-size: 1rem;
+  color: var(--color-text);
+  text-align: center;
+  padding: 8px;
+}
