@@ -3,6 +3,7 @@
 import { state } from "./state.js";
 import { el, clear, showScreen } from "./ui.js";
 import { pickNextCorpus, getCorpus } from "./corpus.js";
+import { showCompositionMission } from "./composition.js";
 
 export function showEndScreen({ corpus, accuracy, elapsed, bossId, bossPassed }) {
   state.ui.screen = "end";
@@ -37,6 +38,9 @@ export function showEndScreen({ corpus, accuracy, elapsed, bossId, bossPassed })
 
   const buttons = el("div", { class: "end-buttons" });
   buttons.appendChild(el("button", { class: "btn", text: "다음 지문 →", onclick: () => nextCorpus() }));
+  buttons.appendChild(el("button", { class: "btn mint", text: "✍ 작문 미션 (선택)", onclick: () => {
+    startCompositionFromEnd(corpus, { corpus, accuracy, elapsed, bossId, bossPassed });
+  }}));
   buttons.appendChild(el("button", { class: "btn ghost", text: "시작 화면", onclick: () => {
     showScreen("start");
     state.ui.screen = "start";
@@ -57,4 +61,11 @@ async function nextCorpus() {
   const corpus = await getCorpus(meta.id);
   const { startReading } = await import("./reading.js");
   startReading(corpus);
+}
+
+function startCompositionFromEnd(corpus, endScreenArgs) {
+  showCompositionMission(corpus, state.progress.learnedWords, () => {
+    // 작문 미션 완료 후 종료 화면 복귀
+    showEndScreen(endScreenArgs);
+  });
 }

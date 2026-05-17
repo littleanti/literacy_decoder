@@ -1,0 +1,19 @@
+{
+  "name": "문해력 해독기",
+  "short_name": "해독기",
+  "description": "지문 속 한자어를 형태소와 문맥으로 추론하는 한글 학습 게임",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#FF7757",
+  "background_color": "#FFF6E4",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

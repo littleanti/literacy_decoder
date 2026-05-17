@@ -19,6 +19,7 @@ export const state = {
     perPagePlacedChars: [], // [{ blankId, char, ts }]
     bossPending: null,  // 사자성어 id (지문 끝나면 진입)
     inBoss: false,
+    compositionAttempts: [], // [{ word, hanja, text, ok, ts }]
   },
   progress: {
     completedCorpusIds: new Set(),
@@ -47,6 +48,7 @@ export function resetSession() {
     perPagePlacedChars: [],
     bossPending: null,
     inBoss: false,
+    compositionAttempts: [],
   };
 }
 

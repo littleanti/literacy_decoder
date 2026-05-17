@@ -312,3 +312,177 @@
 .boss-result-banner.pass { background: var(--mint); color: white; }
 .boss-result-banner.fail { background: var(--gray); color: var(--navy); }
 .end-buttons { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+/* 응용 작문 미션 화면 */
+#composition-screen.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  padding: 20px 16px;
+  overflow-y: auto;
+}
+
+.composition-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.composition-title {
+  font-family: 'Jua', sans-serif;
+  font-size: 1.8rem;
+  color: var(--coral);
+  text-align: center;
+}
+
+.composition-instruction {
+  font-family: 'Gowun Dodum', sans-serif;
+  font-size: 1rem;
+  color: var(--color-text-dim);
+  text-align: center;
+}
+
+.composition-word-card {
+  background: var(--color-surface);
+  border: 3px solid var(--navy);
+  border-radius: 18px;
+  padding: 18px 16px;
+  box-shadow: 0 4px 0 var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.composition-word-display {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.composition-hangul {
+  font-family: 'Gowun Dodum', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--coral);
+}
+
+.composition-hanja {
+  font-family: var(--hanja-font);
+  font-size: 1.6rem;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.composition-input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.composition-textarea {
+  font-family: 'Gowun Dodum', sans-serif;
+  font-size: 1rem;
+  padding: 14px;
+  border: 2px solid var(--navy);
+  border-radius: 14px;
+  min-height: 100px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.composition-textarea::placeholder {
+  color: var(--color-text-dim);
+}
+
+.composition-textarea:focus {
+  outline: none;
+  border-color: var(--coral);
+  box-shadow: 0 0 0 3px rgba(255, 119, 87, 0.1);
+}
+
+.composition-char-count {
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+  text-align: right;
+  margin-top: -8px;
+}
+
+.composition-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+/* 결과 모달 */
+.composition-result-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.composition-result-message {
+  background: white;
+  border-radius: 20px;
+  padding: 24px 20px;
+  max-width: 380px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: center;
+}
+
+.composition-result-success {
+  font-family: 'Jua', sans-serif;
+  font-size: 1.8rem;
+  color: var(--mint);
+  margin: 0;
+  font-weight: 700;
+}
+
+.composition-result-try-again {
+  font-family: 'Jua', sans-serif;
+  font-size: 1.6rem;
+  color: var(--navy);
+  margin: 0;
+  font-weight: 700;
+}
+
+.composition-result-text {
+  font-family: 'Gowun Dodum', sans-serif;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  margin: 0;
+  padding: 12px;
+  background: var(--color-surface);
+  border-radius: 12px;
+  line-height: 1.6;
+}
+
+.composition-result-hint {
+  font-family: 'Gowun Dodum', sans-serif;
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+  margin: 0;
+  line-height: 1.5;
+}

@@ -9,6 +9,7 @@ import { el, showScreen, applyFontSize, applyDarkMode, toast } from "./ui.js";
 import { loadManifest, pickNextCorpus, getCorpus } from "./corpus.js";
 import { startReading } from "./reading.js";
 import { showDashboard } from "./dashboard.js";
+import "./install-prompt.js";
 
 async function bootstrap() {
   // 1) 사용자 부트스트랩 (UUID 없으면 생성)
@@ -136,3 +137,12 @@ bootstrap().catch(err => {
   console.error("[main] bootstrap failed", err);
   document.body.innerHTML = `<pre style="padding:20px;color:#c00">초기화 실패: ${err.message}</pre>`;
 });
+
+// PWA — 서비스 워커 등록 (GitHub Pages 호환 위해 상대 경로)
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch((err) => {
+      console.warn("[main] SW registration failed", err);
+    });
+  });
+}
