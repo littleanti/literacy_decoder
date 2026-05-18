@@ -12,7 +12,7 @@
 | CSS | Vanilla CSS + CSS Variables (디자인 토큰) | 1단계 토큰 체계 재사용 |
 | 폰트 | Google Fonts (Pretendard 본문, Noto Sans CJK KR 한자) | 가독성 + 한자 서브셋 |
 | 한자 폰트 | Noto Sans CJK KR **서브셋** | 8급 ~ 준4급 한자 + 사자성어 한자만 임베드 |
-| 개발 서버 | `npx http-server . -p 3006 --cors -o` | 7단계 컨벤션 일치, 포트 3006 |
+| 개발 서버 | `npx http-server . -p 4326 --cors -o` | 7단계 컨벤션 일치, 포트 4326 |
 | 저장소 | IndexedDB (Dexie.js 또는 자체 래퍼) | 누적 학습 데이터, localStorage 한도 회피 |
 | 설정 저장 | localStorage | 폰트 크기, 다크모드, 마지막 진행 위치 |
 | TTS | Web Speech API | 지문 낭독, 한자 음 발음 |
@@ -30,7 +30,7 @@
 ```
 6_literacy_decoder/
 ├── index.html               # 진입점, 화면 슬롯 + hidden-input (단어 채우기용)
-├── package.json             # npx http-server, 포트 3006
+├── package.json             # npx http-server, 포트 4326
 ├── src/
 │   ├── css/
 │   │   ├── tokens.css        # 색상, 간격, 타이포 토큰
@@ -418,7 +418,7 @@ try {
 | Netlify | `netlify deploy --dir=.` |
 | Vercel | `vercel --prod` |
 | Cloudflare Pages | 드래그 앤 드롭 |
-| 자체 호스팅 | `npx http-server . -p 3006` |
+| 자체 호스팅 | `npx http-server . -p 4326` |
 
 빌드 단계 불필요 — 루트 디렉터리 그대로 업로드. 서비스워커 도입 시 `sw.js` 캐시 버전 갱신만 주의.
 

@@ -8,7 +8,7 @@
 
 ```bash
 npm run dev
-# → http://localhost:3006
+# → http://localhost:4326
 ```
 
 빌드 단계가 없습니다. 정적 파일을 그대로 호스팅하거나 `npx http-server .` 만으로 실행됩니다.

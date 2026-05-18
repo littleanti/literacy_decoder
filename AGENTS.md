@@ -84,7 +84,7 @@
 
 ### Working In This Directory
 - 미구현 설계 단계
-- 권장 스택: Vanilla JS + CSS, 포트 **3006**
+- 권장 스택: Vanilla JS + CSS, 포트 **4326**
 - 5단계의 한자 DB와 학습 진척도(IndexedDB) 공유 또는 호환 형식 사용
 
 ### Implementation Priorities

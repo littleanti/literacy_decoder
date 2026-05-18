@@ -8,7 +8,7 @@
 **전체**: ✅ v1.0 구현 완료 (Phase 0 ~ 6)
 **완료**: AGENTS.md, PRD.md, TRD.md, Phase 0 ~ Phase 6 전 구현
 **리포지토리**: https://github.com/littleanti/literacy_decoder
-**실행**: `npm run dev` → http://localhost:3006
+**실행**: `npm run dev` → http://localhost:4326
 
 ### Phase 완료 요약
 - ✅ **Phase 0**: 한자 마스터 DB (~280자), 코퍼스 스키마, IndexedDB 래퍼, 빌드 마커 스크립트

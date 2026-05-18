@@ -6,7 +6,7 @@ import puppeteer from 'puppeteer';
 import { spawn } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
 
-const HOST = 'http://localhost:3006';
+const HOST = 'http://localhost:4326';
 const PRD_PATH = '.omc/prd.json';
 
 const results = {};
@@ -18,7 +18,7 @@ function mark(id, passes, detail) {
 
 async function startServer() {
   return new Promise((resolve, reject) => {
-    const proc = spawn('npx', ['-y', 'http-server', '.', '-p', '3006', '-s'], { stdio: 'pipe' });
+    const proc = spawn('npx', ['-y', 'http-server', '.', '-p', '4326', '-s'], { stdio: 'pipe' });
     let resolved = false;
     proc.stdout.on('data', (b) => {
       const s = b.toString();
