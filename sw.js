@@ -1,6 +1,6 @@
 // Service Worker — 앱 셸 캐싱 + offline fallback
 
-const CACHE_VERSION = 'literacy-decoder-v3';
+const CACHE_VERSION = 'literacy-decoder-v4';
 const CACHE_URLS = [
   // 앱 진입점
   './',
