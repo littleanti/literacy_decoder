@@ -8,6 +8,7 @@
 **전체**: ✅ v1.0 핵심 루프 구현 완료 (Phase 0 ~ 6) — 일부 보강 항목 잔존
 **완료**: AGENTS.md, PRD.md, TRD.md, Phase 0 ~ Phase 6 전 단계 핵심 기능
 **잔존(미구현)**: 한자 long-press 툴팁, SRL 복습 한자 우선 등장, 복습 알림, 학부모 PIN 잠금, i18n, 코퍼스 분량 확대(현재 intro 5 / mid 5 / advanced 5 / boss 5편)
+**모드 변경(2026-06-02)**: 학년(5/6) 선택 제거 → **통합 모드**. 전체 지문을 manifest 순서(입문→중급→심화)로 제공. `pickNextCorpus`의 grade/level 은 선택적 필터로만 남김. 한자 도감의 급수(8급~1급) 필터는 별개로 유지.
 **리포지토리**: https://github.com/littleanti/literacy_decoder
 **실행**: `npm run dev` → http://localhost:4326
 

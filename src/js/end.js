@@ -51,8 +51,7 @@ export function showEndScreen({ corpus, accuracy, elapsed, bossId, bossPassed })
 }
 
 async function nextCorpus() {
-  const grade = state.user.grade;
-  const meta = await pickNextCorpus({ grade, level: null, completedSet: state.progress.completedCorpusIds });
+  const meta = await pickNextCorpus({ completedSet: state.progress.completedCorpusIds });
   if (!meta) {
     showScreen("start");
     state.ui.screen = "start";

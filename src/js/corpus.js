@@ -33,18 +33,20 @@ export async function getCorpus(corpusId) {
 }
 
 /**
- * 학년 + 난이도로 다음에 풀 지문 선택. completedSet 에 포함된 것은 후순위로.
+ * 다음에 풀 지문 선택. completedSet 에 포함된 것은 후순위로.
+ * grade / level 은 선택적 필터 — 통합 모드에서는 둘 다 생략해 전체 지문에서 고른다.
+ * (manifest 순서가 곧 난이도 순서: 입문 → 중급 → 심화)
  */
-export async function pickNextCorpus({ grade, level, completedSet }) {
+export async function pickNextCorpus({ grade, level, completedSet } = {}) {
   const m = await loadManifest();
-  const candidates = m.corpora.filter(c => c.grade === grade && (!level || c.level === level));
+  const candidates = m.corpora.filter(c => (!grade || c.grade === grade) && (!level || c.level === level));
   if (candidates.length === 0) return null;
   const unfinished = candidates.filter(c => !completedSet.has(c.id));
   const pool = unfinished.length ? unfinished : candidates;
   return pool[0]; // 단순 정책: manifest 순서. SRL 도입 시 가중치 변경.
 }
 
-export async function listCorporaByGradeLevel(grade, level) {
+export async function listCorpora({ grade, level } = {}) {
   const m = await loadManifest();
-  return m.corpora.filter(c => c.grade === grade && (!level || c.level === level));
+  return m.corpora.filter(c => (!grade || c.grade === grade) && (!level || c.level === level));
 }

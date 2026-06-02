@@ -21,9 +21,7 @@ async function bootstrap() {
   }
   state.user.id = userId;
 
-  // grade / fontSize / dark
-  const storedGrade = parseInt(settings.get(STORAGE_KEYS.GRADE, "0"), 10);
-  state.user.grade = [5, 6].includes(storedGrade) ? storedGrade : 5;
+  // fontSize / dark (학년 구분 없는 통합 모드)
   const storedFs = parseInt(settings.get(STORAGE_KEYS.FONT_SIZE, "18"), 10);
   state.user.fontSize = FONT_SIZES.includes(storedFs) ? storedFs : 18;
   state.user.darkMode = settings.get(STORAGE_KEYS.DARK_MODE) === "1";
@@ -60,28 +58,15 @@ function renderStartScreen() {
   document.getElementById("start-continue-btn").style.display = hasContinue ? "" : "none";
   document.getElementById("start-progress-summary").textContent =
     `학습한 한자 ${state.progress.learnedHanja.size}자 · 통과 보스 ${state.progress.bossesPassed.size}편`;
-
-  // 학년 버튼
-  const grade5 = document.getElementById("grade5-btn");
-  const grade6 = document.getElementById("grade6-btn");
-  function syncGrade() {
-    grade5.classList.toggle("active", state.user.grade === 5);
-    grade6.classList.toggle("active", state.user.grade === 6);
-  }
-  syncGrade();
-  grade5.onclick = () => { state.user.grade = 5; settings.set(STORAGE_KEYS.GRADE, "5"); syncGrade(); };
-  grade6.onclick = () => { state.user.grade = 6; settings.set(STORAGE_KEYS.GRADE, "6"); syncGrade(); };
 }
 
 function bindGlobalEvents() {
   document.getElementById("start-play-btn").addEventListener("click", async () => {
     const meta = await pickNextCorpus({
-      grade: state.user.grade,
-      level: null,
       completedSet: state.progress.completedCorpusIds,
     });
     if (!meta) {
-      toast("이 학년의 지문을 모두 완료했어요! 🎓");
+      toast("모든 지문을 완료했어요! 🎓");
       return;
     }
     const corpus = await getCorpus(meta.id);

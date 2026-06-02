@@ -36,16 +36,6 @@
   50%      { transform: translateY(-12px); }
 }
 
-.level-label {
-  font-family: 'Jua', sans-serif;
-  font-size: 1rem;
-  color: var(--color-text-dim);
-}
-
-.grade-buttons {
-  display: flex; gap: 12px;
-}
-
 .start-progress-summary {
   font-family: 'Gowun Dodum';
   color: var(--color-text-dim);
