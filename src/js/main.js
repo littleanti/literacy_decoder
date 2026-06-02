@@ -9,6 +9,7 @@ import { el, showScreen, applyFontSize, applyDarkMode, toast } from "./ui.js";
 import { loadManifest, pickNextCorpus, getCorpus } from "./corpus.js";
 import { startReading } from "./reading.js";
 import { showDashboard } from "./dashboard.js";
+import { showCollection } from "./collection.js";
 import "./install-prompt.js";
 
 async function bootstrap() {
@@ -99,6 +100,10 @@ function bindGlobalEvents() {
     showDashboard();
   });
 
+  document.getElementById("start-collection-btn").addEventListener("click", () => {
+    showCollection();
+  });
+
   document.getElementById("start-settings-btn").addEventListener("click", () => {
     showScreen("settings");
     state.ui.screen = "settings";
@@ -128,6 +133,11 @@ function bindGlobalEvents() {
   });
 
   document.getElementById("dashboard-back-btn").addEventListener("click", () => {
+    showScreen("start");
+    state.ui.screen = "start";
+  });
+
+  document.getElementById("collection-back-btn").addEventListener("click", () => {
     showScreen("start");
     state.ui.screen = "start";
   });

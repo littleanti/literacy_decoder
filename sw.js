@@ -1,6 +1,6 @@
 // Service Worker — 앱 셸 캐싱 + offline fallback
 
-const CACHE_VERSION = 'literacy-decoder-v1';
+const CACHE_VERSION = 'literacy-decoder-v2';
 const CACHE_URLS = [
   // 앱 진입점
   './',
@@ -12,6 +12,7 @@ const CACHE_URLS = [
   'src/css/components.css',
   'src/css/screens.css',
   'src/css/reading.css',
+  'src/css/collection.css',
   'src/css/responsive.css',
 
   // 핵심 JS
@@ -30,6 +31,7 @@ const CACHE_URLS = [
   'src/js/tts.js',
   'src/js/boss.js',
   'src/js/dashboard.js',
+  'src/js/collection.js',
   'src/js/composition.js',
   'src/js/install-prompt.js',
 

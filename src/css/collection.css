@@ -1,0 +1,203 @@
+/* 한자 도감 — 한자 그리드 + 급수 필터 + 어휘 상세 (modal 재사용) */
+/* (.screen.active 가 display 를 제어하므로 여기서 display 를 강제하지 않는다) */
+
+.dogam-sub {
+  text-align: center;
+  font-family: 'Gowun Dodum', sans-serif;
+  font-size: 0.9rem;
+  color: var(--color-text-dim);
+  margin: 4px 0 12px;
+}
+.dogam-sub strong {
+  font-family: 'Jua', sans-serif;
+  color: var(--coral);
+}
+
+/* 급수 필터 칩 */
+.dogam-filter {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.dogam-chip {
+  font-family: 'Jua', sans-serif;
+  font-size: 0.92rem;
+  padding: 6px 16px;
+  border-radius: 100px;
+  border: 2px solid var(--navy);
+  background: var(--color-surface);
+  color: var(--navy);
+  cursor: pointer;
+  transition: transform 0.1s, background 0.15s, color 0.15s;
+}
+.dogam-chip:active { transform: scale(0.95); }
+.dogam-chip.active {
+  background: var(--coral);
+  color: white;
+  border-color: var(--coral);
+}
+
+/* 한자 그리드 (페이지 스크롤) */
+.dogam-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(74px, 1fr));
+  gap: 8px;
+  padding: 4px 2px 16px;
+}
+
+.dogam-card {
+  position: relative;
+  background: var(--color-surface);
+  border: 2px solid var(--navy);
+  border-radius: 14px;
+  box-shadow: 0 3px 0 var(--navy);
+  padding: 8px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: 84px;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+.dogam-card:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--navy); }
+.dogam-card.learned { border-color: var(--mint); box-shadow: 0 3px 0 var(--mint-dark); }
+
+.dogam-glyph {
+  font-family: var(--hanja-font);
+  font-size: 1.85rem;
+  line-height: 1;
+  color: var(--color-text);
+}
+.dogam-read {
+  font-family: 'Gowun Dodum', sans-serif;
+  font-size: 0.7rem;
+  color: var(--coral);
+  text-align: center;
+  line-height: 1.1;
+}
+.dogam-grade {
+  font-family: 'Gowun Dodum', sans-serif;
+  font-size: 0.58rem;
+  color: var(--color-text-dim);
+  opacity: 0.85;
+}
+.dogam-learned-badge {
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  font-size: 0.7rem;
+  color: var(--mint-dark);
+  font-weight: bold;
+}
+
+/* ── 상세 (showModal .modal 내부 레이아웃) ───────────────── */
+.dogam-detail-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-height: 0;
+}
+.dogam-detail-close {
+  position: absolute;
+  top: -6px;
+  right: -4px;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: var(--color-text);
+  cursor: pointer;
+  opacity: 0.6;
+  line-height: 1;
+}
+.dogam-detail-close:active { transform: scale(0.9); }
+
+.dogam-detail-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+  padding-right: 24px;
+}
+.dogam-detail-glyph {
+  font-family: var(--hanja-font);
+  font-size: 2.6rem;
+  line-height: 1;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  background: var(--coral);
+  color: white;
+  border: 3px solid var(--coral-dark);
+  border-radius: 18px;
+}
+.dogam-detail-read {
+  font-family: 'Jua', sans-serif;
+  font-size: 1.35rem;
+  color: var(--color-text);
+}
+.dogam-detail-meta {
+  font-family: 'Gowun Dodum', sans-serif;
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+  margin-top: 3px;
+}
+
+.dogam-detail-label {
+  font-family: 'Jua', sans-serif;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+.dogam-detail-label strong { color: var(--coral); margin-left: 2px; }
+
+.dogam-detail-words {
+  overflow-y: auto;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  -webkit-overflow-scrolling: touch;
+}
+.dogam-word {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: 12px;
+  padding: 8px 12px;
+}
+.dogam-word.idiom { border-color: var(--yellow-dark); }
+.dogam-word-text {
+  font-family: 'Jua', sans-serif;
+  font-size: 1.05rem;
+  color: var(--color-text);
+  flex: 0 0 auto;
+}
+.dogam-word-hanja {
+  font-family: var(--hanja-font);
+  font-size: 0.92rem;
+  color: var(--color-text-dim);
+}
+.dogam-word-mean {
+  font-family: 'Gowun Dodum', sans-serif;
+  font-size: 0.82rem;
+  color: var(--color-text-dim);
+  line-height: 1.25;
+}
+.dogam-empty {
+  text-align: center;
+  color: var(--color-text-dim);
+  font-size: 0.9rem;
+  padding: 16px;
+}
