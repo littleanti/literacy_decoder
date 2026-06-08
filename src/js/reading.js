@@ -263,12 +263,12 @@ function placeCharOnActiveBlank(char) {
   if (blank.placedChars.length >= expected) return;
   blank.placedChars.push(char);
   state.session.perPagePlacedChars.push({ blankId: blank.id, char, ts: Date.now() });
-  // 슬롯 갱신
-  const slot = document.querySelector(`.blank[data-blank-id="${blank.id}"] .blank-char[data-slot="${blank.placedChars.length - 1}"]`);
-  if (slot) {
+  // 슬롯 갱신 (같은 빈칸 ID의 모든 occurrence 동기화)
+  const slots = document.querySelectorAll(`.blank[data-blank-id="${blank.id}"] .blank-char[data-slot="${blank.placedChars.length - 1}"]`);
+  slots.forEach(slot => {
     slot.textContent = char;
     slot.classList.add("placed");
-  }
+  });
   if (blank.placedChars.length === expected) {
     checkAnswer(blank);
   }
@@ -310,9 +310,9 @@ async function checkAnswer(blank) {
 }
 
 function rerenderBlank(blank) {
-  const span = document.querySelector(`.blank[data-blank-id="${blank.id}"]`);
-  if (!span) return;
-  renderBlankContents(span, blank);
+  // 같은 빈칸 ID가 본문에 여러 번 나올 수 있으므로 모든 occurrence 갱신
+  const spans = document.querySelectorAll(`.blank[data-blank-id="${blank.id}"]`);
+  spans.forEach(span => renderBlankContents(span, blank));
 }
 
 function updateProgressUI() {
