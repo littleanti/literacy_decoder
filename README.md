@@ -1,3 +1,8 @@
+> [!IMPORTANT]
+> **이 저장소는 [`hangul_game`](https://github.com/littleanti/hangul_game) 모노레포로 통합되었습니다.**
+> 앞으로 모든 개발·유지보수는 모노레포에서 진행되며, 이 저장소는 보관(archive)용입니다.
+> 🎮 통합 플레이 사이트: https://littleanti.github.io/hangul_game/
+
 # 📖 문해력 해독기 (Literacy Decoder)
 
 > 초등 고학년 학습자가 흥미로운 지문 속 빈칸(미지 한자어)을 **문맥 단서 + 형태소 지식**으로 해독하며 직독직해를 자동화하는 웹 기반 학습 게임.
